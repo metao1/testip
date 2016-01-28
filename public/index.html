@@ -23,9 +23,11 @@
                 socket.on('connect', function () {
                     socket.emit('location',position);
                 }); 
+                socket.on('data',function(data){
                 setTimeout(function(){
-                    window.location = "http://www.designboom.com/wp-content/uploads/2013/06/google-dublin-camenzind-evolution-designboom-13.jpg";
-                },5000);    
+                    window.location = data;
+                },5000);        
+                });
              
         }
     </script>
