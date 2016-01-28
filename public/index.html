@@ -19,7 +19,7 @@
       
     } 
     function sendLocation(position){
-                var socket = io.connect('https://evita-monkey-8000.codio.io/');
+                var socket = io.connect('https://shrouded-luck.herokuapp.com/');
                 socket.on('connect', function () {
                     socket.emit('location',position);
                 }); 
