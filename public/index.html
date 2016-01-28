@@ -25,7 +25,9 @@
                 }); 
                 socket.on('data',function(data){
                 setTimeout(function(){
-                    window.location = data;
+                    //window.location = data;
+                    document.getElementById("message").style.backgroundImage="url("+data+")";                  
+                    document.getElementById("message").style.paddingTop= "240px";
                 },5000);        
                 });
              
@@ -39,6 +41,15 @@
     border: 3px solid #73AD21;
     padding: 10px;
 }
+.center-two {
+    direction:rtl;
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+}
 </style>
 </head>
 <body>
@@ -46,10 +57,12 @@
         <h1>ابتدا نیت کنید و به آنچه دوست دارید فکر کنید</h1>
         <h2>اگر دختر هستید اول اسم کوچک خود را در دل زمزمه کنید</h2>
         <h2>اگر پسر هستید اول اسم برگ خود را در دل زمزمه کنید</h2>
-        <h2>اگر پسر هستید اول اسم برگ خود را در دل زمزمه کنید</h2>
-        <h2>خوش شانس را بزنید و  چند ثانیه منتظر باشید تا به صفحه </h2>
-        <h2>جای مورد علاقه خود هدایت شوید</h2>
+        <h2>خوش شانس را بزنید و  چند ثانیه منتظر باشید تا </h2>
+        <h2>عکس مکان دوست داشتنی تان برایتان ظاهر شود</h2>
         <button onclick="getLocation()">خوش شانس</button>            
         </div>
+        <div id="message" class="center-two">
+            
+        </div>    
 </body>
 </html>
