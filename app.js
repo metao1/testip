@@ -9,10 +9,11 @@ app.use(express.static(path.join(__dirname, './public')));
 io.sockets.on('connection', function (socket) {
   socket.on('location', function (data) {
     console.log(data);
-    data =  data.lat+","+data.lon +";;";   
+    /*data =  data.lat+","+data.lon +";;";   
     fs.appendFile('data/location.log',data,function(err){
        if(err) throw err;        
     });
+    */
   });
 });
 
